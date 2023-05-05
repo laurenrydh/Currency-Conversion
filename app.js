@@ -47,7 +47,7 @@ saveFavorite.addEventListener('click', saveFavorites);
 
 async function performConversion() {
   try {
-    const response = await fetch(`https://api.apilayer.com/exchangerates_data/convert?from=${fromCurrency.value}&to=${toCurrency.value}&amount=${amount.value}&apikey=c65tNimyoqkbVber1GoYgn7JuevQFEhM`);
+    const response = await fetch(`https://api.apilayer.com/exchangerates_data/convert?from=${fromCurrency.value}&to=${toCurrency.value}&amount=${amount.value}&apikey=3mgP2F598I0n9pUpJqzrsMtJ3Tsh3Sty`);
     const data = await response.json();
     const result = data.result;
     convertedAmount.textContent = result.toFixed(2);
@@ -63,7 +63,7 @@ async function fetchHistoricalRates() {
   const date = '2020-03-11';
 
   try {
-    const response = await fetch(`https://api.apilayer.com/exchangerates_data/${date}?base=${from}&symbols=${to}&apikey=c65tNimyoqkbVber1GoYgn7JuevQFEhM`);
+    const response = await fetch(`https://api.apilayer.com/exchangerates_data/${date}?base=${from}&symbols=${to}&apikey=3mgP2F598I0n9pUpJqzrsMtJ3Tsh3Sty`);
     const data = await response.json();
     const rate = data.rates[to]
     historicalRatesContainer.innerHTML = `Historical exchange rate on ${date}: 1 ${from} = ${rate.toFixed(2)} ${to}`;
